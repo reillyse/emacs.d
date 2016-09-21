@@ -31,7 +31,7 @@
             'wrap-region
             'exec-path-from-shell
             'visual-regexp
-            'buffer-move ;; used for rotating buffers
+          ;;  'buffer-move ;; used for rotating buffers
             'visual-regexp-steroids
             'ido-vertical-mode
             'yafolding
@@ -261,19 +261,19 @@
         ad-do-it)
     ad-do-it))
 
-(require 'flycheck)
+;;(require 'flycheck)
 ;; disable jshint since we prefer eslint checking
-(setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-          '(javascript-jshint)))
+;;(setq-default flycheck-disabled-checkers
+;;  (append flycheck-disabled-checkers
+;;          '(javascript-jshint)))
 ;; use eslint with web-mode for jsx files
-(flycheck-add-mode 'javascript-eslint 'web-mode)
+;;(flycheck-add-mode 'javascript-eslint 'web-mode)
 ;; customize flycheck temp file prefix
-(setq-default flycheck-temp-prefix ".flycheck")
+;;(setq-default flycheck-temp-prefix ".flycheck")
 ;; disable json-jsonlist checking for json files
-(setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-          '(json-jsonlist)))
+;;(setq-default flycheck-disabled-checkers
+;;  (append flycheck-disabled-checkers
+  ;;        '(json-jsonlist)))
 
 ;; adjust indents for web-mode to 2 spaces
 (defun my-web-mode-hook ()
@@ -303,7 +303,7 @@
 ; Set cursor color to white
 (set-cursor-color "#ffffff")
 
-(add-to-list 'custom-theme-load-path "~/cobalt2-emacs")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/cobalt2-emacs")
 (load-theme 'cobalt2 t)
 
 ;; Always open split windows horizontally
@@ -605,10 +605,10 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key (kbd "C-c , r") 'rspec-rerun)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "M-<SPC>") 'cycle-spacing)
-(global-set-key (kbd "<down>") (ignore-error-wrapper 'windmove-down))
-(global-set-key (kbd "<up>") (ignore-error-wrapper 'windmove-up))
-(global-set-key (kbd "<left>") (ignore-error-wrapper 'windmove-left))
-(global-set-key (kbd "<right>") (ignore-error-wrapper 'windmove-right))
+;; (global-set-key (kbd "<down>") (ignore-error-wrapper 'windmove-down))
+;; (global-set-key (kbd "<up>") (ignore-error-wrapper 'windmove-up))
+;; (global-set-key (kbd "<left>") (ignore-error-wrapper 'windmove-left))
+;; (global-set-key (kbd "<right>") (ignore-error-wrapper 'windmove-right))
 (global-set-key (kbd "S-<down>") 'shrink-window)
 (global-set-key (kbd "S-<up>") 'enlarge-window)
 (global-set-key (kbd "C-S-<up>") 'enlarge-window-horizontally)
@@ -627,11 +627,10 @@ point reaches the beginning or end of the buffer, stop there."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("a4f8d45297894ffdd98738551505a336a7b3096605b467da83fae00f53b13f01" "af9761c65a81bd14ee3f32bc2ffc966000f57e0c9d31e392bc011504674c07d6" "73abbe794b6467bbf6a9f04867da0befa604a072b38012039e8c1ba730e5f7a5" "cc16715d803b32ae65fa652867551c03e21587b5a5e3450e66c8f1e22dc5e1f5" default)))
+    ("4aafea32abe07a9658d20aadcae066e9c7a53f8e3dfbd18d8fa0b26c24f9082c" "a4f8d45297894ffdd98738551505a336a7b3096605b467da83fae00f53b13f01" "af9761c65a81bd14ee3f32bc2ffc966000f57e0c9d31e392bc011504674c07d6" "73abbe794b6467bbf6a9f04867da0befa604a072b38012039e8c1ba730e5f7a5" "cc16715d803b32ae65fa652867551c03e21587b5a5e3450e66c8f1e22dc5e1f5" default)))
  '(dired-omit-verbose nil)
  '(enh-ruby-deep-indent-paren nil)
  '(feature-cucumber-command "bundle exec cucumber {options} {feature}")
- '(flycheck-highlighting-mode nil)
  '(jsx-indent-level 2)
  '(ledger-highlight-xact-under-point nil)
  '(ledger-reconcile-default-commodity "RON")
