@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: dom_ready
-# key: ready
-# --
-$(document).ready(function() {
-                             $0
-});
